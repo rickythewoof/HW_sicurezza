@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
+void oflow(char* data){
+	char buf[8];
+	strcpy(buf, data);
+}
+
 int main(int argc, char** argv){
-	char buf[256];
-	strcpy(buf, argv[1]);
-	printf("Hello %s\n", buf);
+	oflow(argv[1]);
 	return 0;
 }
